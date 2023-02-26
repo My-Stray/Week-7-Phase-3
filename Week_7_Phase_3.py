@@ -55,7 +55,7 @@ def printinfo(DetailsPrinted):
     TotTax = 0.00
     TotNetPay = 0.00
 
-    with open(EmpFile, "r") as EmpFile:
+    with open(FILENAME, "r") as EmpFile:
         while True:
             rundate = input ("Enter start date for report (MM/DD/YYYY) or All for all data in file: ")
             if (rundate.upper() == "ALL"):
@@ -135,7 +135,7 @@ if __name__ == "__main__":
                 taxrate = GetTaxRate()
                 fromdate = fromdate.strftime('%Y-%m-%d')
                 todate = todate.strftime('%Y-%m-%d')
-                EmpDetail = fromdate + "|" + todate + "|" + empname + "|" + str.hours + "|" + str.hourlyrate + "|" + str.taxrate + "|" "\n"
+                EmpDetail = fromdate + "|" + todate + "|" + empname + "|" + str(hours) + "|" + str(hourlyrate) + "|" + str(taxrate) +  "\n"
                 EmpFile.write(EmpDetail) 
                 
             EmpFile.close()
